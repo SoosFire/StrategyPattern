@@ -1,6 +1,7 @@
 package dk.productapi.controller;
 
 import dk.productapi.model.RegisterUserDTO;
+import dk.productapi.model.ValidationMode;
 import dk.productapi.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class RegisterController {
 
     @PostMapping("/register")
     public String register(@ModelAttribute("user") RegisterUserDTO dto,
-            @RequestParam(defaultValue = "simple") String mode) {
+            @RequestParam(defaultValue = "simple") ValidationMode mode) {
         userService.register(dto,mode);
         return "success";
     }

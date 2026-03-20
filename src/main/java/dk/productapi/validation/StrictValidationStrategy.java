@@ -2,7 +2,9 @@ package dk.productapi.validation;
 
 import dk.productapi.exception.ValidationException;
 import dk.productapi.model.RegisterUserDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StrictValidationStrategy implements ValidationStrategy {
 
     @Override
